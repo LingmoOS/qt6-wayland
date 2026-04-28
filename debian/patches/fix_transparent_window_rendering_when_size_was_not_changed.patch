@@ -1,0 +1,16 @@
+Subject: [PATCH] Fix transparent window rendering when size was not changed
+---
+Index: qt6-wayland-port-src/src/client/qwaylandshmbackingstore.cpp
+===================================================================
+--- qt6-wayland-port-src.orig/src/client/qwaylandshmbackingstore.cpp
++++ qt6-wayland-port-src/src/client/qwaylandshmbackingstore.cpp
+@@ -323,6 +323,9 @@ bool QWaylandShmBackingStore::recreateBa
+                               QSizeF(rect.size()) * sourceDevicePixelRatio);
+             painter.drawImage(rect, *sourceImage, sourceRect);
+         }
++
++        // when window has a surface format with an alpha, and size was the same, its region also needs to be cleaned
++        bufferWasRecreated = false;
+     }
+ 
+     mBackBuffer = buffer;
