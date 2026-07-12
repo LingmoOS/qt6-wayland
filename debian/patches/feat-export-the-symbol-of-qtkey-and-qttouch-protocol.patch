@@ -4,7 +4,7 @@ Date: Tue, 11 Mar 2025 14:14:19 +0800
 Subject: [PATCH] feat: export the symbol of qtkey and qttouch protocol
 
 Support to extent qtkey and qttouch by caller,
-It's to assist linuxdeepin/dde-shell#1058 in solving
+It's to assist linuxdeepin/lingmo-shell#1058 in solving
 Num can't work in dde-shell.
 
 Change-Id: I5d9dc68fa139ec590f295b3638b85718c53f177d
